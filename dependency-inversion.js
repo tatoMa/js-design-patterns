@@ -12,6 +12,7 @@ class Person{
 
 // Low-level module
 class RelationshipBrowser{
+    // cannot instantiate only
     constructor(){
         if(this.constructor.name === 'RelationshipBrowser')
             throw new Error('RelationshipBrowser is abstract!')
@@ -40,6 +41,7 @@ class Relationships extends RelationshipBrowser{
 }
 
 // High-level module
+// Shouldn't depending of low level module
 class Research{
     // abstract classes/interfaces
 
