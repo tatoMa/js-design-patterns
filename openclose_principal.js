@@ -18,7 +18,7 @@ class Product{
     }
 }
 
-// define a filter for products
+// define a simple filter for products
 class ProductFilter{
     filterByColor(products, color){
         return products.filter(p => p.color === color)
@@ -34,6 +34,7 @@ class ProductFilter{
     }
 }
 
+// the better approach is divide filters into single class  
 class ColorSpecification{
     constructor(color){
         this.color = color
@@ -52,6 +53,7 @@ class SizeSpecification{
     }
 }
 
+// the and logic for filter
 class AndSpecification{
     constructor(...specs){
         this.specs = specs
@@ -65,7 +67,6 @@ class AndSpecification{
 let apple = new Product('Apple', Color.green, Size.small)
 let tree = new Product('Tree', Color.green, Size.large)
 let house = new Product('House', Color.blue, Size.large)
-
 let products = [apple, tree, house]
 
 console.log(`Green products (old):`)
