@@ -31,7 +31,7 @@ class PersonBuilder{
 
 class PersonJobBuilder extends PersonBuilder{
     constructor(person){
-        super()
+        super(person)
     }
 
     at(companyName){
@@ -47,3 +47,34 @@ class PersonJobBuilder extends PersonBuilder{
         return this
     }
 }
+class PersonAddressBuilder extends PersonBuilder{
+    constructor(person){
+        super(person)
+    }
+
+    at(streetAddress){
+        this.person.streetAddress = streetAddress
+        return this
+    }
+    withPostcode(postcode){
+        this.person.postcode = postcode
+        return this
+    }
+    in(city){
+        this.person.city = city
+        return this
+    }
+}
+
+let pb = new PersonBuilder()
+let person = pb
+	.lives
+		.at('123 ABC Road')
+		.in('London')
+		.withPostcode('abc123')
+	.works
+		.at('Frankston')
+		.asA('Engineer')
+		.earning(123456)
+	.build()
+console.log(person.toString())
