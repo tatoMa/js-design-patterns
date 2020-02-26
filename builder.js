@@ -82,7 +82,7 @@ console.log(html.join(''));
 let builder = new HtmlBuilder('ul')
 for (let word of words)
     builder.addChild('li', word)
-console.log(builder.root.toString())
+console.log(builder.toString())
 
 builder.clear()
 builder
