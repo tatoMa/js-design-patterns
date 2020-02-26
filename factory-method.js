@@ -23,7 +23,7 @@ class Point{
         this.y = y
     }
     static get factory(){
-        return new PointFactory()
+        return PointFactory
     }
 }
 
@@ -39,13 +39,13 @@ class PointFactory{
         )
     }
 }
-let p = PointFactory.newCartesianPoint(4, 5)
-console.log(p);
-
-let p2 = PointFactory.newPolarPoint(5, Math.PI/2)
-console.log(p2);
-// let p = Point.factory.newCartesianPoint(4, 5)
+// let p = PointFactory.newCartesianPoint(4, 5)
 // console.log(p);
 
-// let p2 = Point.factory.newPolarPoint(5, Math.PI/2)
+// let p2 = PointFactory.newPolarPoint(5, Math.PI/2)
 // console.log(p2);
+let p = Point.factory.newCartesianPoint(4, 5)
+console.log(p);
+
+let p2 = Point.factory.newPolarPoint(5, Math.PI/2)
+console.log(p2);
